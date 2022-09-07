@@ -24,7 +24,7 @@ function setup() {
     distance: 2700,
     center: [0, 0, 0]
   });
-    easycam.setDistanceMin(600);
+    easycam.setDistanceMin(300);
     easycam.setDistanceMax(2700);
 
     state = easycam.getState();
@@ -86,8 +86,11 @@ function draw() {
     push();
     // fill('#e6daa8');
     fill(0);
-    // box(800,800*0.9,boxSize*2*0.9);
+    // let _f = pageI.height/cover.height;
+    translate(0,-170,0);
+    box(400,700*0.9,boxSize*2*0.9);
     pop();
+    
 
     let _w = 1000;
     let _h = cover.height/(pageI.width/_w); //500
@@ -120,7 +123,7 @@ function draw() {
         plane(_w, _h*_f);
         pop();
     }
-
+    
     push();
     let _f = pageI.height/cover.height;
     translate(0,_h*_f*-0.27,-1*boxSize);
@@ -128,6 +131,8 @@ function draw() {
     texture(backcover);
     plane(_w, _h);
     pop();
+
+    
 
     if(frameCount%90==0){
         print(str[strCount%str.length]);
@@ -166,12 +171,12 @@ function clickTrip(){
         reset =true;
     // open =1;
         easycam.setState(state, 2000);
-        easycam.removeMouseListeners();
+        // easycam.removeMouseListeners();
     }else if(open==1){
         open = 2;
     }else if(open==2){
         open = 0;
-        easycam.attachMouseListeners();
+        // easycam.attachMouseListeners();
         let _s = JSON.parse(JSON.stringify(state));
         // print(_s);
         _s.distance = 2700;
