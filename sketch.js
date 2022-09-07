@@ -88,7 +88,7 @@ function draw() {
     fill(0);
     // let _f = pageI.height/cover.height;
     translate(0,-170,0);
-    box(400,700*0.9,boxSize*2*0.9);
+    box(400,690*0.9,boxSize*2*0.9);
     pop();
     
 
