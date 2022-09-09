@@ -21,7 +21,7 @@ function setup() {
   noStroke();
 
   easycam = createEasyCam({
-    distance: 2700,
+    distance: 1800,
     center: [0, 0, 0]
   });
     easycam.setDistanceMin(300);
@@ -32,10 +32,10 @@ function setup() {
     print("size:",windowWidth,windowHeight);
     if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
       print("system: mobile.");
-      state.distance = 1800;
+      state.distance = 600;
     } else { 
       print("system: desktop.");
-      state.distance = 800;
+      state.distance = 450;
     }
     _state = state;
     // print(state.distance);
@@ -87,20 +87,21 @@ function draw() {
     // fill('#e6daa8');
     fill(0);
     // let _f = pageI.height/cover.height;
-    translate(0,-170,0);
-    box(400,690*0.9,boxSize*2*0.9);
+    translate(0,-210,0);
+    box(200,300*0.9,boxSize*2*0.9);
     pop();
     
 
     let _w = 1000;
     let _h = cover.height/(pageI.width/_w); //500
+    let __f = -0.6;
 
     if(open == 0){
         push();
         texture(cover);
         // texture(pageI);
         let _f = pageI.height/cover.height;
-        translate(0,_h*_f*-0.27,boxSize);
+        translate(0,_h*_f*__f,boxSize);
         // translate(0,500*4397/2237*-0.25,boxSize);
         plane(_w, _h);
         pop();
@@ -110,7 +111,7 @@ function draw() {
         texture(pageI);
         // translate(0,0,boxSize);
         let _f = pageI.height/cover.height;
-        translate(0,_h*_f*-0.27,boxSize);
+        translate(0,_h*_f*__f,boxSize);
         plane(_w, _f*_h);
         pop();
     }else if(open == 2){
@@ -119,14 +120,14 @@ function draw() {
         texture(pageII);
         // translate(0,0,boxSize);
         let _f = pageII.height/cover.height;
-        translate(0,_h*_f*-0.27,boxSize);
+        translate(0,_h*_f*__f,boxSize);
         plane(_w, _h*_f);
         pop();
     }
     
     push();
     let _f = pageI.height/cover.height;
-    translate(0,_h*_f*-0.27,-1*boxSize);
+    translate(0,_h*_f*__f,-1*boxSize);
     rotateY(radians(180));
     texture(backcover);
     plane(_w, _h);
