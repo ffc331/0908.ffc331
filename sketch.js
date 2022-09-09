@@ -87,14 +87,14 @@ function draw() {
     // fill('#e6daa8');
     fill(0);
     // let _f = pageI.height/cover.height;
-    translate(0,-120,0);
+    translate(0,-90,0);
     box(200,300*0.9,boxSize*2*0.9);
     pop();
     
 
     let _w = 1000;
     let _h = cover.height/(pageI.width/_w); //500
-    let __f = -0.27;
+    let __f = -0.21;
 
     if(open == 0){
         push();
