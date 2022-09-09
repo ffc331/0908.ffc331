@@ -21,7 +21,7 @@ function setup() {
   noStroke();
 
   easycam = createEasyCam({
-    distance: 1800,
+    distance: 1000,
     center: [0, 0, 0]
   });
     easycam.setDistanceMin(300);
@@ -71,8 +71,8 @@ function draw() {
     
     if(reset){
         count -= count/10;
-        hFix += (210 - hFix)/10;
-        if(count < 3 && hFix>207){
+        hFix += (120 - hFix)/10;
+        if(count < 3 && hFix>117){
             reset =false;
             open = 1;
             // print("RESET");
@@ -87,14 +87,14 @@ function draw() {
     // fill('#e6daa8');
     fill(0);
     // let _f = pageI.height/cover.height;
-    translate(0,-210,0);
+    translate(0,-120,0);
     box(200,300*0.9,boxSize*2*0.9);
     pop();
     
 
     let _w = 1000;
     let _h = cover.height/(pageI.width/_w); //500
-    let __f = -0.6;
+    let __f = -0.27;
 
     if(open == 0){
         push();
