@@ -71,8 +71,8 @@ function draw() {
     
     if(reset){
         count -= count/10;
-        hFix += (300 - hFix)/10;
-        if(count < 3 && hFix>297){
+        hFix += (210 - hFix)/10;
+        if(count < 3 && hFix>207){
             reset =false;
             open = 1;
             // print("RESET");
